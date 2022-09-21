@@ -8,7 +8,7 @@ public class Example1 {
 
     public void createTree()
     {
-        System.out.println("Tree is created");
+        System.out.println("Tree is created !");
     }
     public void createTree2()
     {
