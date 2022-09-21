@@ -1,0 +1,23 @@
+<script>
+    var images = ['img/background.png',
+                  'newimg'];
+    var index = 0;
+
+    function buildImage() {
+      var img = document.createElement('img')
+      img.src = images[index];
+      document.getElementById('content').appendChild(img);
+    }
+
+    function changeImage(){
+      var img = document.getElementById('content').getElementsByTagName('img')[0]
+      index++;
+      index = index % images.length; // This is for if this is the last image then goto first image
+      img.src = images[index];
+    }
+</script>
+
+<body onload="buildImage();">
+    <div class="contents" id="content"></div>
+    <button onclick="changeImage()">NextImage</button>
+</body>
