@@ -1,28 +1,28 @@
 <script>
-    var images = ['https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2019/10/27/12/29/duck-4581608_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2017/12/10/15/16/white-horse-3010129_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/12/04/21/58/rabbit-1882699_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/01/17/11/22/peacock-1144738_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/02/19/15/46/labrador-retriever-1210559_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/12/31/21/22/discus-fish-1943755_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2021/06/16/21/46/parrot-6342271_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/01/30/18/01/africa-1170205_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2018/05/03/22/34/lion-3372720_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2019/09/15/04/23/rhinoceros-4477306_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2020/10/27/07/40/cheetah-5689870_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/05/02/12/40/roe-deer-1367182_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/07/27/10/54/turtle-1545026_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2017/08/14/17/12/cows-2641195_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2022/08/26/22/01/bee-7413333_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2014/09/10/17/44/rat-440987_960_720.jpg',
-                  'https://cdn.pixabay.com/photo/2016/01/04/06/26/wadi-rum-1120371_960_720.jpg'];
+    var images = [{path:'https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg',name:'Elephant'},
+                  {path:'https://cdn.pixabay.com/photo/2019/10/27/12/29/duck-4581608_960_720.jpg',name:'Duck'},
+                  {path:'https://cdn.pixabay.com/photo/2017/12/10/15/16/white-horse-3010129_960_720.jpg',name:'Horse'},
+                  {path:'https://cdn.pixabay.com/photo/2016/12/04/21/58/rabbit-1882699_960_720.jpg',name:'Rabbit'},
+                  {path:'https://cdn.pixabay.com/photo/2016/01/17/11/22/peacock-1144738_960_720.jpg',name:'Peacock'},
+                  {path:'https://cdn.pixabay.com/photo/2016/02/19/15/46/labrador-retriever-1210559_960_720.jpg',name:'Dog'},
+                  {path:'https://cdn.pixabay.com/photo/2016/12/31/21/22/discus-fish-1943755_960_720.jpg',name:'Fish'},
+                  {path:'https://cdn.pixabay.com/photo/2021/06/16/21/46/parrot-6342271_960_720.jpg',name:'Parrot'},
+                  {path:'https://cdn.pixabay.com/photo/2016/01/30/18/01/africa-1170205_960_720.jpg',name:'Hippo'},
+                  {path:'https://cdn.pixabay.com/photo/2018/05/03/22/34/lion-3372720_960_720.jpg',name:'Lion'},
+                  {path:'https://cdn.pixabay.com/photo/2019/09/15/04/23/rhinoceros-4477306_960_720.jpg',name:'rhinoceros'},
+                  {path:'https://cdn.pixabay.com/photo/2020/10/27/07/40/cheetah-5689870_960_720.jpg',name:'cheetah'},
+                  {path:'https://cdn.pixabay.com/photo/2016/05/02/12/40/roe-deer-1367182_960_720.jpg',name:'Deer'},
+                  {path:'https://cdn.pixabay.com/photo/2016/07/27/10/54/turtle-1545026_960_720.jpg',name:'Turtle'},
+                  {path:'https://cdn.pixabay.com/photo/2017/08/14/17/12/cows-2641195_960_720.jpg',name:'Cow'},
+                  {path:'https://cdn.pixabay.com/photo/2022/08/26/22/01/bee-7413333_960_720.jpg',name:'Bee'},
+                  {path:'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg',name:'Cat'},
+                  {path:'https://cdn.pixabay.com/photo/2014/09/10/17/44/rat-440987_960_720.jpg',name:'Rat'},
+                  {path:'https://cdn.pixabay.com/photo/2016/01/04/06/26/wadi-rum-1120371_960_720.jpg',name:'Camel'}];
     var index = 0;
 
     function buildImage() {
       var img = document.createElement('img')
-      img.src = images[index];
+      img.src = images[index].path;
       img.setAttribute('style','width:1920px;height:1080px',);
       document.getElementById('content').appendChild(img);
     }
@@ -31,7 +31,7 @@
       var img = document.getElementById('content').getElementsByTagName('img')[0]
       index++;
       index = index % images.length; // This is for if this is the last image then goto first image
-      img.src = images[index];
+      img.src = images[index].path;
     }
 </script>
 
